@@ -37,9 +37,13 @@ for fname in images:
         
         # Draw and display the corners
         cv.drawChessboardCorners(img, (8, 6), corners2, ret)
-        cv.imshow('img', img)
+        
+        # Resize the image to be shown:
+        cv.namedWindow("Resized_Window", cv.WINDOW_NORMAL)
+        cv.resizeWindow("Resized_Window", 2000, 4000)
+        cv.imshow('Resized_Window', img)
         # press q to iterate to the next images 
-        if cv.waitKey(1) == ord('q'):
+        if cv.waitKey(3000) == ord('q'):
             continue
 
 cv.destroyAllWindows()
